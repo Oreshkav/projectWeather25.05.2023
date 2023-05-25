@@ -28,21 +28,21 @@ async function fetchCoordinate() {
 
         const responceWeather = await fetch(urlLink);
         const weather = await responceWeather.json();  
+        const {temperature, windspeed, winddirection, weathercode} = weather.current_weather;
 
         /**log**/
-        console.log("weather:", weather.current_weather)
-        console.log(city);
-        console.log(country);
-        console.log(region);
+        // console.log("weather:", weather.current_weather)
+        // console.log(city);
+        // console.log(country);
+        // console.log(region);
 
         cityP.innerText = "City: " + city;
         countryP.innerText = country;
         regionP.innerText = region;
-
-        temperatureP.innerText = weather.current_weather.temperature;
-        windspeedP.innerText = weather.current_weather.windspeed;
-        winddirectionP.innerText = weather.current_weather.winddirection;
-        regionP.weathercodeP = weather.current_weather.weathercode;
+        temperatureP.innerText = "Temperature: " + temperature;
+        windspeedP.innerText = "Windspeed: " + windspeed;
+        winddirectionP.innerText = "Winddirection: " + winddirection;
+        regionP.weathercodeP = "Weathercode; " + weathercode;
 
     }
     catch (error) {

@@ -1,4 +1,23 @@
+body {
+    position: relative;
+    font-size: xx-large;
+}
+
 div {
+    background-image: url("sky.avif");
+    /* background-image: url("sky2.jpeg"); */
     border: 1px solid aqua;
     background-color: azure;
+    width: 400px;
+    height: 700px;
+    /* margin-top: 70px; */
+    padding: 40px;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 30%;
+}
+
+h1 {
+    text-align: center;
 }
