@@ -1,40 +1,54 @@
 body {
     position: relative;
-    font-size: xx-large;
+    margin: 0 0 0 0;
+    padding: 0;
+    color: rgb(17, 6, 139);
 }
 
 #weatherCard {
-    background-image: url("sky.avif");
-    /* background-image: url("sky2.jpeg"); */
-    /* border: 1px solid aqua; */
-    /* background-color: azure; */
-    border-radius: 10px;
-    width: 400px;
-    height: 700px;
-    /* margin-top: 70px; */
-    padding: 40px;
+    font-size: 2em;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    flex-wrap: wrap;
+
     position: absolute;
-    text-align: center;
     top: 30%;
     left: 30%;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+
+    background-image: url("pictures/sky.avif");
+    border-radius: 10px;
+    width: 500px;
+    height: 900px;
+    margin-top: 20px;
+    padding: 40px;
+
+    box-shadow: 5px 0 0 10px rgba(141, 141, 141, 0.5);
 }
 
 h1 {
     text-align: center;
+    font-size: 3em;
 }
 
-.city {
+#windPng{
+/* width: 50px; */
+height: 70px;
 }
-.country {
+
+p {
+    margin: 10px;
+    padding: 15px;
 }
-.region {
+
+#temperature {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 100px;
+    color: yellow;
 }
-.temperature {
-}
-.windspeed {
-}
-.winddirection {
-}
-.weathercode {
+
+#weathercode {
+  padding: 20px;
 }

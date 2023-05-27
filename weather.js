@@ -19,9 +19,6 @@ async function fetchCoordinate() {
         const { latitude, longitude, city, country, region } = coordinate;
         const latitudeLongitude = "latitude=" + latitude + "&longitude=" + longitude;
 
-        // console.log(coordinate);
-        // console.log(urlLink);
-
         const urlLink = `${shortWeather}${latitudeLongitude}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m`;
         
         getWeather(urlLink, city, country, region);
@@ -32,7 +29,6 @@ async function fetchCoordinate() {
 
     async function getWeather(urlLink, city, country, region) {
         try{
-
         const responceWeather = await fetch(urlLink);
         const weather = await responceWeather.json();
         const { temperature, windspeed, winddirection, weathercode } = weather.current_weather;
@@ -41,18 +37,14 @@ async function fetchCoordinate() {
         // console.log("weather:", weather.current_weather)
         // console.log(weathercode );
         // console.log(city);
-        // console.log(country);
-        // console.log(region);
 
         cityP.innerText = city;
         countryP.innerText = country;
         regionP.innerText = region;
-        temperatureP.innerText = "Temperature: " + temperature;
-        windspeedP.innerText = "Windspeed: " + windspeed;
+        temperatureP.innerText = temperature + "°C";
+        windspeedP.innerText = "Windspeed: " + windspeed + " m/sec";
         winddirectionP.innerText = "Winddirection: " + winddirection;
-
         weathercodeP.innerText = getWeatherByCode(weathercode);
-
     }
     catch (error) {
         console.log("Error fetching weather: ", error);
